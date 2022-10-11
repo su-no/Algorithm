@@ -3,6 +3,8 @@ function solution(s) {
   let countOfZero = 0;
   let countOfConvert = 0;
 
+  // TODO: 이진수 변환할 때.. 정규식이나 replace 활용할 수도 있음...^^!
+
   // 변환된 이진수가 1이면 종료
   while (binaryNumber !== '1') {
     let zeroRemovedNumber = '';
