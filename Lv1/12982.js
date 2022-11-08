@@ -1,6 +1,8 @@
 function solution(d, budget) {
   let result = 0;
-  const sortedD = d.sort((a, b) => { return a - b });
+  const sortedD = d.sort((a, b) => {
+    return a - b;
+  });
   for (let i = 0; i < sortedD.length; i++) {
     if (budget >= sortedD[i]) {
       budget -= sortedD[i];

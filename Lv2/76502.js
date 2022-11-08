@@ -16,15 +16,15 @@ function solution(s) {
     // 괄호를 queue에 넣어가며, 짝이 맞으면 pop, 안맞으면 push
     const queue = [];
     rotatedArray.forEach((bracket, idx) => {
-      if (bracket === "]" && queue[queue.length - 1] === "[") {
+      if (bracket === ']' && queue[queue.length - 1] === '[') {
         queue.pop();
         return;
       }
-      if (bracket === ")" && queue[queue.length - 1] === "(") {
+      if (bracket === ')' && queue[queue.length - 1] === '(') {
         queue.pop();
         return;
       }
-      if (bracket === "}" && queue[queue.length - 1] === "{") {
+      if (bracket === '}' && queue[queue.length - 1] === '{') {
         queue.pop();
         return;
       }
@@ -38,7 +38,7 @@ function solution(s) {
   return answer;
 }
 
-console.log(solution("[](){}")); // 3
-console.log(solution("}]()[{")); // 3
-console.log(solution("[)(]")); // 0
-console.log(solution("}}}")); // 0
+console.log(solution('[](){}')); // 3
+console.log(solution('}]()[{')); // 3
+console.log(solution('[)(]')); // 0
+console.log(solution('}}}')); // 0

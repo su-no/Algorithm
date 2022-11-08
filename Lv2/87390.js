@@ -1,8 +1,8 @@
 function solution(n, left, right) {
   const answer = [];
   for (let i = left; i <= right; i++) {
-    answer.push(Math.max(parseInt(i / n) + 1, i % n + 1));
-    console.log(parseInt(i / n) + 1, i % n + 1);
+    answer.push(Math.max(parseInt(i / n) + 1, (i % n) + 1));
+    console.log(parseInt(i / n) + 1, (i % n) + 1);
   }
   return answer;
 }

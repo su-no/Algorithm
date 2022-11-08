@@ -6,7 +6,7 @@ function solution(n, s) {
   // 2. 배열의 합이 s보다 모자란 만큼 뒤에서부터 1씩 증가시킨다.
 
   const roundDown = parseInt(s / n);
-  const diff = s - (parseInt(s / n) * n);
+  const diff = s - parseInt(s / n) * n;
 
   const frontArray = new Array(n - diff).fill(roundDown);
   const backArray = new Array(diff).fill(roundDown + 1);

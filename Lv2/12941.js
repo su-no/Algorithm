@@ -1,7 +1,11 @@
 function solution(A, B) {
   // A는 오름차순, B는 내림차순으로 정렬
-  const sortedA = A.sort((a, b) => { return a - b; });
-  const sortedB = B.sort((a, b) => { return b - a; });
+  const sortedA = A.sort((a, b) => {
+    return a - b;
+  });
+  const sortedB = B.sort((a, b) => {
+    return b - a;
+  });
 
   // 같은 인덱스끼리 곱해서 더하기
   let sum = 0;

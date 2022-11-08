@@ -9,8 +9,7 @@ function solution(s) {
   while (binaryNumber !== '1') {
     let zeroRemovedNumber = '';
     for (let i = 0; i < binaryNumber.length; i++) {
-      if (binaryNumber[i] !== '0')
-        zeroRemovedNumber += binaryNumber[i];
+      if (binaryNumber[i] !== '0') zeroRemovedNumber += binaryNumber[i];
     }
     // 제거된 0의 개수 더하기
     countOfZero += binaryNumber.length - zeroRemovedNumber.length;
@@ -24,6 +23,6 @@ function solution(s) {
   return [countOfConvert, countOfZero];
 }
 
-console.log(solution("110010101001"));
-console.log(solution("01110"));
-console.log(solution("1111111"));
+console.log(solution('110010101001'));
+console.log(solution('01110'));
+console.log(solution('1111111'));

@@ -4,7 +4,9 @@ function solution(people, limit) {
 
   let boat = 0;
   let i = 0;
-  people.sort((a, b) => { return b - a; })
+  people.sort((a, b) => {
+    return b - a;
+  });
   while (i < people.length) {
     if (people[i] + people.at(-1) <= limit) {
       people.pop();

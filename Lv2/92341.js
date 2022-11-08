@@ -35,7 +35,11 @@ function solution(fees, records) {
   if (queue) {
     for (const number in queue) {
       const inTime = queue[number];
-      const netTime = 23 * 60 + 59 - parseInt(60 * inTime.split(':')[0]) - parseInt(inTime.split(':')[1]);
+      const netTime =
+        23 * 60 +
+        59 -
+        parseInt(60 * inTime.split(':')[0]) -
+        parseInt(inTime.split(':')[1]);
 
       if (number in cumulativeTime) cumulativeTime[number] += netTime;
       else cumulativeTime[number] = netTime;

@@ -18,4 +18,4 @@ function solution(n) {
 console.log(solution(5)); // 2
 console.log(solution(6)); // 2
 console.log(solution(19192)); // 8
-console.log(solution(1243153)); // 9 
+console.log(solution(1243153)); // 9

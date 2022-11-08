@@ -3,7 +3,7 @@ function solution(cacheSize, cities) {
   if (cacheSize === 0) return cities.length * 5;
 
   // 대소문자 구분 없이 처리하기 위해, 모두 대문자로 바꾼다.
-  const citiesUpperCase = cities.map((city) => {
+  const citiesUpperCase = cities.map(city => {
     return city.toUpperCase();
   });
   let time = 0;
@@ -35,29 +35,29 @@ function solution(cacheSize, cities) {
 
 console.log(
   solution(3, [
-    "Jeju",
-    "Pangyo",
-    "Seoul",
-    "NewYork",
-    "LA",
-    "Jeju",
-    "Pangyo",
-    "Seoul",
-    "NewYork",
-    "LA",
-  ])
+    'Jeju',
+    'Pangyo',
+    'Seoul',
+    'NewYork',
+    'LA',
+    'Jeju',
+    'Pangyo',
+    'Seoul',
+    'NewYork',
+    'LA',
+  ]),
 ); // 50
 console.log(
   solution(3, [
-    "Jeju",
-    "Pangyo",
-    "Seoul",
-    "Jeju",
-    "Pangyo",
-    "Seoul",
-    "Jeju",
-    "Pangyo",
-    "Seoul",
-  ])
+    'Jeju',
+    'Pangyo',
+    'Seoul',
+    'Jeju',
+    'Pangyo',
+    'Seoul',
+    'Jeju',
+    'Pangyo',
+    'Seoul',
+  ]),
 ); // 21
-console.log(solution(2, ["a", "a", "a", "b", "b", "b", "c", "c", "c"])); // 21
+console.log(solution(2, ['a', 'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c'])); // 21

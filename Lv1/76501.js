@@ -3,7 +3,7 @@ function solution(absolutes, signs) {
   signs.forEach((bool, idx) => {
     if (bool) answer += absolutes[idx];
     else answer -= absolutes[idx];
-  })
+  });
   return answer;
 }
 

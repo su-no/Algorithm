@@ -7,7 +7,7 @@ function solution(lottos, win_nums) {
   lottos.forEach(num => {
     if (win_nums.includes(num)) matchingNumberCount += 1;
     if (num === 0) zeroCount += 1;
-  })
+  });
 
   const highestRank = rank[matchingNumberCount + zeroCount];
   const lowestRank = rank[matchingNumberCount];

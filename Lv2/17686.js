@@ -20,9 +20,25 @@ function solution(files) {
     return 0;
   });
   // console.log(arr);
-  
+
   return arr.map(value => value[0]);
 }
 
-console.log(solution(['img12.png', 'img10.png', 'img02.png', 'img1.png', 'IMG01.GIF', 'img2.JPG']));
-console.log(solution(['F-5 Freedom Fighter', 'B-50 Superfortress', 'A-10 Thunderbolt II', 'F-14 Tomcat']));
+console.log(
+  solution([
+    'img12.png',
+    'img10.png',
+    'img02.png',
+    'img1.png',
+    'IMG01.GIF',
+    'img2.JPG',
+  ]),
+);
+console.log(
+  solution([
+    'F-5 Freedom Fighter',
+    'B-50 Superfortress',
+    'A-10 Thunderbolt II',
+    'F-14 Tomcat',
+  ]),
+);
