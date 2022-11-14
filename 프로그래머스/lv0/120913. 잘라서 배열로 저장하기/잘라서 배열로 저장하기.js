@@ -5,6 +5,7 @@ function solution(my_str, n) {
     //     result.push(my_str.slice(n*i, n*(i+1)));
     // }
     // return result;
+    
     const result = [];
     for (let i=0; i<my_str.length; i+=n) {
         result.push(my_str.slice(i, i+n));
