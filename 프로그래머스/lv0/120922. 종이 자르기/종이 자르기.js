@@ -1,5 +1,6 @@
 function solution(M, N) {
-    return (M - 1) + M * (N - 1);
+    // return (M - 1) + M * (N - 1);
+    return M * N - 1;
 }
 
 // 4*4 : 3+4*3
