@@ -8,7 +8,6 @@ function solution(n) {
         }
         numOf3x++;
         count++;
-        console.log(count, numOf3x);
     }
     return numOf3x - 1;
 }
