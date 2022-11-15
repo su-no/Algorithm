@@ -1,4 +1,5 @@
 function solution(A, B) {
+    // A와 B가 같으면 0번만에 만족
     if (A === B) {
         return 0;
     }
