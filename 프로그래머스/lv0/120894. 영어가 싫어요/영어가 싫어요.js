@@ -1,18 +1,22 @@
 function solution(numbers) {
-    const dict = {'zero': 0,
-                  'one': 1,
-                  'two': 2,
-                  'three': 3,
-                  'four': 4,
-                  'five': 5,
-                  'six': 6,
-                  'seven': 7,
-                  'eight': 8,
-                  'nine': 9
-                 }
-    // 1) 해당하는 문자를 배열로 만들어서 map 함수로 변환
-    // return Number(numbers.match(/zero|one|two|three|four|five|six|seven|eight|nine/g).map(num => dict[num]).join(''));
+    // 문자열에 일치하는 숫자 obj
+    const dict = {
+        zero: 0,
+        one: 1,
+        two: 2,
+        three: 3,
+        four: 4,
+        five: 5,
+        six: 6,
+        seven: 7,
+        eight: 8,
+        nine: 9,
+    }
     
-    // 2) 해당하는 문자를 바로 숫자로 치환 => 더 빠름.
-    return Number(numbers.replace(/zero|one|two|three|four|five|six|seven|eight|nine/g, num => dict[num]));
+    // 문자열 찾아서 배열로 나누기
+    const arr = numbers.match(/zero|one|two|three|four|five|six|seven|eight|nine/g);
+    // 각 문자열을 숫자로 치환, join으로 문자열로 이어서, number 타입으로 변환
+    const result = Number(arr.map(str => dict[str]).join(''));
+    
+    return result;
 }
