@@ -1,36 +1,22 @@
 function solution(board) {
-    // 1. n*n 행렬을 만들고 0으로 초기화한다.
-    const dangerZone = [];
-    for (let i=0; i<board.length; i++) {
-        dangerZone.push(Array(board.length).fill(0));
-    }
+    const n = board.length;
     
-    // 2. board를 돌면서 지뢰가 있는 곳과 주변을 1로 표시한다.
-    for (let m=0; m<board.length; m++) {
-        for (let n=0; n<board.length; n++) {
-            if (board[m][n] === 1) {
-                const leftMin = Math.max(n-1, 0);
-                const rightMax = Math.min(n+1, dangerZone.length-1);
-                const upMax = Math.min(m+1, dangerZone.length-1);
-                const downMin = Math.max(m-1, 0);
-                
-                dangerZone[m][n] = 1; // 지뢰
-                dangerZone[upMax][n] = 1; // 위쪽
-                dangerZone[upMax][rightMax] = 1; // 오른쪽 위
-                dangerZone[m][rightMax] = 1; // 오른쪽
-                dangerZone[downMin][rightMax] = 1; // 오른쪽 아래
-                dangerZone[downMin][n] = 1; // 아래쪽
-                dangerZone[downMin][leftMin] = 1; // 왼쪽 아래
-                dangerZone[m][leftMin] = 1; // 왼쪽
-                dangerZone[upMax][leftMin] = 1 // 왼쪽 위  
+    // 새로운 n*n 배열 생성
+    const dangerBoard = Array(n).fill(0).map(arr => Array(n).fill(0));
+    
+    for (let i=0; i<n; i++) { //세로
+        for (let j=0; j<n; j++) { // 가로
+            if (board[i][j] !== 1) continue;
+            // 1인 지역 주위를 1로 변경
+            for (let k=Math.max(i-1, 0); k<=Math.min(i+1, n-1); k++) {
+                for (let l=Math.max(j-1, 0); l<=Math.min(j+1, n-1); l++) {
+                    dangerBoard[k][l] = 1;
+                }
             }
         }
     }
     
-    // 3. dagerZone을 돌면서 안전지대 (0)의 합을 구해 리턴한다.
-    const safeZone = dangerZone.reduce((sum, row) => {
-        return sum + row.filter(sign => sign === 0).length;
-    }, 0)
-    
-    return safeZone;
+    // 새로운 배열에서 0의 개수 리턴
+    const result = dangerBoard.flat().filter(v => v === 0).length;
+    return result;
 }
