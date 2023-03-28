@@ -1,19 +1,23 @@
 function solution(lines) {
-    // 위치: 선분 개수 형태로 Map 저장
-    // * 선분 마지막위치는 포함하지 않아야 함.
-    const lineMap = new Map();
-    for (const line of lines) {
-        for (let i=line[0]; i<line[1]; i++) {
-            lineMap.set(i, lineMap.get(i) + 1 || 1);
+    // 최소값~최대값 선분을 만들어서 0으로 초기화
+    // line들이 지날때마다 1씩 추가
+    // 반복문 완료 후 2 이상의 숫자가 연속되는 선분의 길이를 구해서 리턴
+    
+    const min = Math.min(...lines.flat());
+    const max = Math.max(...lines.flat());
+    
+    const cntArray = Array(max-min+1).fill(0);
+    
+    for (let i=0; i<lines.length; i++) {
+        const start = lines[i][0];
+        const end = lines[i][1];
+        
+        for (let j=start-min; j<end-min; j++) {
+            cntArray[j]++;
         }
     }
-    
-    // map의 value를 문자열로 변환해서, 정규표현식을 이용해서 겹치는 선분 찾기
-    const overlappedLines = [...lineMap.values()].join('').toString().match(/[23]+/g);
-    // 겹치는 선분 없으면 0 리턴
-    if (!overlappedLines) return 0;
-    
-    // 각 선분의 길이 합 구해서 리턴
-    const result = overlappedLines.reduce((sum, cur) => sum + cur.length, 0);
-    return result;
+
+    const continuousLines = cntArray.join('').match(/[2-3]*/g);
+    if (!continuousLines) return 0;
+    return continuousLines.reduce((sum, cur) => sum + cur.length ,0);
 }
