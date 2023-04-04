@@ -1,12 +1,13 @@
 function solution(s){
+    const lowerS = s.toLowerCase();
     let cntP = 0;
     let cntY = 0;
     
-    for (let i=0; i<s.length; i++) {
-        if (s[i] === 'p' || s[i] === 'P') {
+    for (let i=0; i<lowerS.length; i++) {
+        if (lowerS[i] === 'p') {
             cntP++;
         }
-        if (s[i] === 'y' || s[i] === 'Y') {
+        if (lowerS[i] === 'y') {
             cntY++;
         }
     }
