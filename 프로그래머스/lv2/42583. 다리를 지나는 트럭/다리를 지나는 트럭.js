@@ -12,6 +12,9 @@ function solution(bridge_length, weight, truck_weights) {
         if (totalWeight + truck_weights[0] <= weight) {
             totalWeight += truck_weights[0];
             onBridge.push({weight: truck_weights.shift(), endTime: time + bridge_length});
+        } else {
+            time = onBridge[0].endTime;
+            continue;
         }
         
         time++;
