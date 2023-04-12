@@ -1,8 +1,10 @@
 function solution(citations) {
+    // 내림차순 정렬
     const sortedArray = citations.sort((a, b) => b - a);
     
     let hIndex = 0;
     
+    // 인덱스+1보다 값이 크다면 hIndex 업데이트
     for (let i=0; i<sortedArray.length; i++ ) {
         if (i + 1 <= sortedArray[i]) {
             hIndex = i + 1;
@@ -11,6 +13,3 @@ function solution(citations) {
     
     return hIndex;
 }
-
-// 인용수 내림차순 정렬
-// 요소 순회하다가 인용수가 index+1 보다 작거나 같으면 그 index+1를 반환
