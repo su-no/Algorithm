@@ -1,9 +1,6 @@
 function solution(arr) {
-    const result = [];
-    
-    arr.forEach(num => {
-        result.push(...Array(num).fill(num));
-    })
+    const result = arr.reduce((list, num) => 
+                              [...list, ...Array(num).fill(num)], [])
     
     return result;
 }
