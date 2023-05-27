@@ -1,5 +1,8 @@
 function solution(number) {
-    const sum = [...number].reduce((sum, num) => sum + Number(num), 0);
-    console.log(sum)
+    let sum = 0;
+    for (let i=0; i<number.length; i++) {
+        sum += Number(number[i]);
+    }
+    
     return sum % 9;
 }
